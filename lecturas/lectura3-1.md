@@ -1,0 +1,9 @@
+# Performance of Recommender Algorithms on Top-N Recommendation Tasks
+
+En este paper se evaluaron distintos algoritmos de recomendación que están optimizados para reducir el error cuadrático medio. Se encontró que estos algoritmo no necesariamente hacen buenos rankings de top n recomendaciones. El paper muestra otras formas de evaluar sistemas recomendadores.
+
+No me queda claro si la manera de evaluar el ranking es correcta. Se usan disntintos sets de mil items en que uno de ellos tiene un ranking de 5 estrellas y el resto no ha sido calificado. La tarea de los recomendadores testeados es generar un ranking a partir de estos datos. Para que un recomendador tenga buen puntaje, debe rankear en un alto puesto en la lista de recomendación el item de 5 estrellas. Los problemas que tengo con esto son que parece una forma muy ineficiente de probar si el recomendador es bueno (se necesitan muchos set de datos). Si bien me parece que es una mejor forma de evaluar que usar RMSE, no me queda claro por qué esta forma de evaluar es equivalente a hacer un ranking de los datos.
+
+Me parece buena idea la eliminar el 2% de los items más populares. Un problema común que pueden tener los sistemas recomendadores es que tienen un sesgo a recomendar items populares en vez de items novedosos. Como no puedo saber a priori si esto mejora o empeora las recomendaciones, sería interesante que se estudiara si eliminar un porcentaje de estos items más populares verdaderamente aumenta la calidad de las recomendaciones.
+
+Lo más destacable de este paper es que trata de cambiar la forma en que los investigadores evaluan sus sistemas recomendadores. Muestra que usar métricas como RMSE no necesariamente muestra el verdadero performance que el sistema recomendador tiene al rankear recomendaciones, que es el uso más típico que se le da a los sistemas recomendadores. Me imagino que este paper tuvo un enorme impacto para las futuras investigaciones en el área.
